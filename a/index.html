@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>函数防抖和节流</title>
 </head>
+<style>
+    body{
+        height:2000px;
+    }
+</style>
 <body>
-        <input type="search" name="" id="search">
+        <!-- <input type="search" name="" id="search">
         <input type="button" value="搜索" id='btn'>
     <script>
+
         let input=document.querySelector('#search');
         let timeId;
         input.onkeyup=function(){
@@ -21,12 +27,17 @@
         };;
         function rendRequest(date){
                     console.log(`发送的请求是:${date}`)
+                } -->
+    <script>
+            let isLog=true;
+            document.body.onscroll=function(){
+                if(isLog){
+                    console.log(1);
+                    isLog=false;
+                setTimeout(function(){isLog=true;},300)
+                
                 }
-
-
-
-
-
+            }
 
     </script>
 </body>
