@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sessionStorage</title>
+</head>
+<body>
+    <input type="button" value="设置" id="btn1">
+    <input type="button" value="读取" id="btn2">
+    <input type="button" value="删除" id="btn3">
+    <input type="button" value="清空" id="btn4">
+
+    <script type="text/javascript">
+        let btn1 = document.querySelector("#btn1");
+        let btn2 = document.querySelector("#btn2");
+        let btn3 = document.querySelector('#btn3');
+        let btn4 = document.querySelector("#btn4");
+        
+        let person  = {name:"tom",age:17};
+        btn1.onclick = function(){
+
+            sessionStorage.setItem('person',JSON.stringify(person));
+            sessionStorage.setItem('jack','zaijian jack');
+
+        }
+
+        btn2.addEventListener('click',function(){
+            console.log(JSON.parse( sessionStorage.getItem('person')))
+		},false)
+        btn3.addEventListener('click',function(){
+            sessionStorage.removeItem('person')
+        },false)
+        btn4.onclick=function(){
+            sessionStorage.clear()
+        }
+    </script>
+</body>
+</html>
